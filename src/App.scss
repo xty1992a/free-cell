@@ -1,0 +1,111 @@
+.app {
+  user-select: none;
+  display: grid;
+  grid-template-rows: 200px minmax(50vh, 1fr);
+  height: 100vh;
+  grid-template-areas: 'header' 'main';
+  width: 1000px;
+  margin: 0 auto;
+
+  > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+
+    h3 {
+      //padding: 10px;
+      display: none;
+    }
+
+    .card-block {
+      display: flex;
+      border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+      background-color: #f9f9f9;
+    }
+
+    .card-box {
+      padding: 10px;
+      aspect-ratio: 0.62;
+      width: 100px;
+      box-sizing: content-box;
+
+      & + .card-box {
+        border-left: 1px dashed #e5e5e5;
+      }
+    }
+  }
+
+  > main {
+    grid-area: main;
+  }
+}
+
+.cells {
+
+
+  .cell {
+  }
+}
+
+.pools {
+
+  .pool {
+    position: relative;
+
+    > div {
+      z-index: 1;
+      position: relative;
+    }
+
+    &:before {
+      content: 'A';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      left: 0;
+      font-size: 80px;
+      color: #999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+
+.series {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  height: 100%;
+
+  :global {
+    .card {
+      flex: 1;
+    }
+  }
+}
+
+.track {
+  padding: 10px;
+  width: 120px;
+   height: 100%;
+  overflow: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+
+  &-item {
+    position: relative;
+    margin-top: -120%;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
